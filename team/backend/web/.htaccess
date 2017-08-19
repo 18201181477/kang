@@ -1,0 +1,9 @@
+RewriteEngine on #开启重写
+
+#如果是一个目录或者文件，就访问目录或文件
+RewriteCond %{REQUESET_FILENAME} !-d
+
+#如果文件存在就直接访问文件，不进行下面的的RewriteRule
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule . index.php
